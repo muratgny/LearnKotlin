@@ -28,6 +28,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
@@ -44,7 +45,8 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
                     GreetingText(
-                        message = "Happy Birthday Sam!",
+                        message = getString(R.string.happy_birthday_sam),//stringResource is the new implementation instead og getString
+                        longMessage = "This is a long message for you my darling to celebrate your birthday",
                         from = "From Emma",
                         modifier = Modifier.padding(8.dp)//burada padding değeri geçtik, tepeden belirlemiş olduk ama functioniçindende ayarlanabilirdi.
                     )
@@ -57,7 +59,7 @@ class MainActivity : ComponentActivity() {
 
 
 @Composable
-fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) {
+fun GreetingImage(message: String, longMessage: String, from: String, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.androidparty)
     Box (modifier = Modifier.border(BorderStroke(5.dp, Color.Gray),
         shape = CutCornerShape(20.dp)
@@ -73,6 +75,7 @@ fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) 
         )
         GreetingText(
             message = message,
+            longMessage = longMessage,
             from = from,
             modifier = Modifier//ui elementlerin modifiye edilmesini saplıyor
                 .fillMaxSize()
@@ -87,7 +90,7 @@ fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) 
 
 
 @Composable
-fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
+fun GreetingText(message: String, longMessage: String, from: String, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.padding(1.dp),
         verticalArrangement = Arrangement.SpaceEvenly,//there are 6 different alignment type for both vertical and horizontals
@@ -98,24 +101,36 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
             fontSize = 100.sp,
             lineHeight = 116.sp,
             textAlign = TextAlign.Center,
-
-
         )
-        Box(modifier = Modifier.padding(10.dp).align(alignment = Alignment.End).border(
-            width = 5.dp,
-            brush = Brush.linearGradient(listOf(Color.Yellow, Color.Blue)),
-            shape = CutCornerShape(0.dp))) {
+        Text(
+            text = longMessage,
+            fontSize = 50.sp,
+            lineHeight = 56.sp,
+            textAlign = TextAlign.Justify,
+            modifier = Modifier.padding(15.dp)
+        )
+        Box(modifier = Modifier
+            .padding(10.dp)
+            .align(alignment = Alignment.End)
+            .border(
+                width = 5.dp,
+                brush = Brush.linearGradient(listOf(Color.Yellow, Color.Blue)),
+                shape = CutCornerShape(0.dp)
+            )
+            .background(color = Color.Red)
+            .alpha(0.3F)
+        ) {
             Text(
                 text = from,
                 fontSize = 40.sp,
                 lineHeight = 76.sp,
                 textDecoration = TextDecoration.Underline,
                 modifier = Modifier
-                    .padding(16.dp)
+                    .padding(26.dp)
                     //.offset(15.dp, 45.dp)
-                  //  .align(alignment = Alignment.End)
-                    .background(color = Color.Red)
-                    .alpha(0.3F)
+                    //.align(alignment = Alignment.End) this align function not working because we put Text in a box. But this function works under a column
+                    //.background(color = Color.Red)
+
                     /*.border(
                         width = 5.dp,
                         brush = Brush.linearGradient(listOf(Color.Yellow, Color.Blue)),
@@ -134,7 +149,8 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
 fun BirthdayCardPreview() {
     LearnKotlinTheme {
         GreetingImage(
-            message = "Happy Birthday Sam!",
+            message = stringResource(R.string.happy_birthday_sam),
+            longMessage = "This is a long message for you my darling to celebrate your birthday",
             from = "From Murat")
 
     }
