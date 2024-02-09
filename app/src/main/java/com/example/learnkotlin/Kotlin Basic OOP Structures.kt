@@ -1,5 +1,4 @@
 package com.example.learnkotlin
-
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
