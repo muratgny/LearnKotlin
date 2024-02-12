@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.learnkotlin.ui.theme.LearnKotlinTheme
 
-class DiceRoller : ComponentActivity() {
+/*class DiceRoller : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -51,7 +51,7 @@ class DiceRoller : ComponentActivity() {
             }
         }
     }
-}
+}*/
 @Preview
 @Composable
 fun DiceRollerApp() {
