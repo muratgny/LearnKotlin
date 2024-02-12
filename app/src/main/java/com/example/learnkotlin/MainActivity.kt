@@ -37,7 +37,7 @@ import androidx.compose.ui.unit.sp
 import com.example.learnkotlin.ui.theme.LearnKotlinTheme
 
 
-class MainActivity : ComponentActivity() {
+/*class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -55,7 +55,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-}
+}*/
 
 
 @Composable

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">LearnKotlin</string>
     <string name="happy_birthday_sam">Happy Birthday Sam!</string>
+    <string name="title_activity_dice_roller">DiceRoller</string>
+    <string name="roll">Roll</string>
+
 </resources>
