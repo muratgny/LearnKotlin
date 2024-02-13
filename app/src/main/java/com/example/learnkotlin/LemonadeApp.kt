@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.BottomAppBar
@@ -28,6 +29,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -40,6 +42,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.learnkotlin.ui.theme.LearnKotlinTheme
@@ -58,6 +61,8 @@ class LemonadeApp : ComponentActivity() {
 @Composable
 fun LemonadeDoApp() {
 
+    //by is a Kotlin property delegation. The default getter and setter functions for the amountInput property are delegated
+    // to the remember class's getter and setter functions, respectively.
     var currentStep by remember { mutableStateOf(1) }
 
     var squeezeCount by remember { mutableStateOf(0) }
@@ -111,6 +116,7 @@ fun LemonadeDoApp() {
                 .background(MaterialTheme.colorScheme.tertiaryContainer),
             color = MaterialTheme.colorScheme.background
         ) {
+
             when (currentStep) {
                 1 -> {
                     LemonTextAndImage(
@@ -161,6 +167,8 @@ fun LemonadeDoApp() {
         }
     }
 }
+
+
 
 @Composable
 fun LemonTextAndImage(

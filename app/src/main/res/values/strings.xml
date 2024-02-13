@@ -14,4 +14,11 @@
     <string name="lemon_content_description">Lemon</string>
     <string name="lemonade_content_description">Glass of lemonade</string>
     <string name="empty_glass_content_description">Empty glass</string>
+
+
+    <string name="calculate_tip">Calculate Tip</string>
+    <string name="bill_amount">Bill Amount</string>
+    <string name="tip_amount">Tip Amount: %s</string>//Special formatted text
+    <string name="title_activity_tip_app">TipApp</string>
+
 </resources>

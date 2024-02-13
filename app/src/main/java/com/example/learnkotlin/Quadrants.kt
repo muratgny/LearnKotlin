@@ -89,7 +89,8 @@ private fun ComposableInfoCard(
     icon: ImageVector,//This is one way to implement Icon as parameter, we can pass also description here as seperate
     title: String,
     backgroundColor: Color,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier//Note: The best practice is to provide a default Modifier parameter to all composable
+// functions, which increases reusability. You should add it as the first optional parameter after all required parameters.
 ) {
     Column(
         modifier = modifier
