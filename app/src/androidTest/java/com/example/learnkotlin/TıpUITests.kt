@@ -11,7 +11,7 @@ import org.junit.Rule
 import org.junit.Test
 import java.text.NumberFormat
 
-class TıpUITests {
+class TipUITests {
     @get:Rule
     val composeTestRule = createComposeRule()//it simulates as the app view
 
