@@ -43,7 +43,7 @@ import androidx.compose.ui.unit.dp
 import com.example.learnkotlin.ui.theme.LearnKotlinTheme
 import java.text.NumberFormat
 
-class TipApp : ComponentActivity() {
+/*class TipApp : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -58,7 +58,7 @@ class TipApp : ComponentActivity() {
             }
         }
     }
-}
+}*/
 @Composable
 fun TipTimeLayout() {
     var amountInput by remember { mutableStateOf("") }//This was in the EditTextField function but to be able use it

@@ -47,7 +47,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.learnkotlin.ui.theme.LearnKotlinTheme
 
-class LemonadeApp : ComponentActivity() {
+/*class LemonadeApp : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -56,7 +56,7 @@ class LemonadeApp : ComponentActivity() {
             }
         }
     }
-}
+}*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LemonadeDoApp() {
