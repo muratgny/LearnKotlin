@@ -13,6 +13,17 @@
         android:theme="@style/Theme.LearnKotlin"
         tools:targetApi="31">
         <activity
+            android:name=".WoofAppThemeExample"
+            android:exported="true"
+            android:label="@string/title_activity_woof_app_theme_example"
+            android:theme="@style/Theme.LearnKotlin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".GridExampleApp"
             android:exported="true"
             android:label="@string/title_activity_grid_example_app"
@@ -78,6 +89,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
